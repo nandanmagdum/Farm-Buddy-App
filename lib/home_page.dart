@@ -223,9 +223,12 @@ class _HomePageState extends State<HomePage> {
                   title: const Text("Tourism"),
                 ),
               ),
-              const Card(
+              Card(
                 child: ListTile(
-              
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => GEMINI()));
+                  },
                   leading: Icon(Icons.equalizer_outlined),
                   title: Text("Chat Bot"),
                 ),
@@ -260,7 +263,7 @@ class _HomePageState extends State<HomePage> {
         //     icon: const Icon(Icons.menu, color: Colors.white)),
         backgroundColor: primary_green,
         centerTitle: true,
-        title: Text("FarmBuddy",
+        title: Text("Kisan Guide",
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall

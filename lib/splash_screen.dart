@@ -55,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
                 Opacity(
                   opacity: value / 500,
-                  child: Text("FarmBuddy",
+                  child: Text("Kisan Guide",
                       style: Theme.of(context)
                           .textTheme
                           .headlineLarge
