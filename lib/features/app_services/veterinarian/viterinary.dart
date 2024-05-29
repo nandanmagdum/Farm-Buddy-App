@@ -14,10 +14,10 @@ class Veterianarian extends StatelessWidget {
         body: FutureBuilder(
           future: VeterinarianServices().getAllVeterinarianRecords(),
           builder: (context, snapshot) {
-            List data = snapshot.data;
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const SpinKitCircle(color: primary_green);
             } else {
+              List data = snapshot.data;
               return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, index) {
