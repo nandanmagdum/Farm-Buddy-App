@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:krishi_vikas/components/my_buttons.dart';
 import 'package:krishi_vikas/components/my_text_field.dart';
-import 'package:krishi_vikas/features/app_services/animal_husbandry/animal_services.dart';
 import 'package:krishi_vikas/features/app_services/veterinarian/veterinarian_services.dart';
 import 'package:path/path.dart';
 

@@ -4,6 +4,7 @@ import 'package:krishi_vikas/features/app_services/Equipment/add_equipment_recor
 import 'package:krishi_vikas/features/app_services/Equipment/equipment.dart';
 import 'package:krishi_vikas/features/app_services/animal_husbandry/add_animal_record.dart';
 import 'package:krishi_vikas/features/app_services/animal_husbandry/animal_husbandry.dart';
+import 'package:krishi_vikas/features/app_services/chatbot/gemini.dart';
 import 'package:krishi_vikas/features/app_services/farm_labours/add_farm_labours.dart';
 import 'package:krishi_vikas/features/app_services/farm_labours/farm_labours.dart';
 import 'package:krishi_vikas/features/app_services/fertilizer/add_fertilizer_record.dart';
@@ -56,7 +57,7 @@ class _HomePageState extends State<HomePage> {
     const Fertilizer(),
     const SoilAnalysis(),
     const Tourism(),
-    const Equipment(),
+    const GEMINI(),
   ];
 
   List<Widget> carouselItems = [
@@ -224,6 +225,7 @@ class _HomePageState extends State<HomePage> {
               ),
               const Card(
                 child: ListTile(
+              
                   leading: Icon(Icons.equalizer_outlined),
                   title: Text("Chat Bot"),
                 ),
