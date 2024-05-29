@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "803647050965",
+    "project_id": "farm-buddy-c15cf",
+    "storage_bucket": "farm-buddy-c15cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803647050965:android:9a6e79c1a563d7e5a4be5c",
+        "android_client_info": {
+          "package_name": "com.example.krishi_vikas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvSGZCaj4pYq4KBe9w4v5h76phtu1KiHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
