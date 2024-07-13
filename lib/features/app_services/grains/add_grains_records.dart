@@ -73,7 +73,7 @@ class _AddGrainsRecordState extends State<AddGrainsRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      // floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
         title: const Text("Add Grains Records"),
         centerTitle: true,

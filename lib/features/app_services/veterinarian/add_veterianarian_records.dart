@@ -84,7 +84,7 @@ class _AddVeterianarianRecordState extends State<AddVeterianarianRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      // floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
         title: const Text("Add Veterianarian Record"),
         centerTitle: true,

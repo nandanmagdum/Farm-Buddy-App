@@ -20,6 +20,7 @@ import 'package:krishi_vikas/features/app_services/vehicle_rent/vehicle_rent.dar
 import 'package:krishi_vikas/features/app_services/veterinarian/add_veterianarian_records.dart';
 import 'package:krishi_vikas/features/app_services/veterinarian/viterinary.dart';
 import 'package:krishi_vikas/features/auth/pages/login_or_register.dart';
+import 'package:krishi_vikas/local_storage/storage_service.dart';
 import 'package:krishi_vikas/utils/colors.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -85,6 +86,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      // floatingActionButton: FloatingActionButton(onPressed: () async{
+      //   print(StorageService.pref.getString(StorageService.JWT));
+      // }),
       drawer: Drawer(
         child: SingleChildScrollView(
           child: Column(
@@ -108,12 +112,12 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              const Card(
-                child: ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text("Home"),
-                ),
-              ),
+              // const Card(
+              //   child: ListTile(
+              //     leading: Icon(Icons.home),
+              //     title: Text("Home"),
+              //   ),
+              // ),
               Card(
                 child: ListTile(
                   onTap: () {
@@ -223,16 +227,16 @@ class _HomePageState extends State<HomePage> {
                   title: const Text("Tourism"),
                 ),
               ),
-              Card(
-                child: ListTile(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => GEMINI()));
-                  },
-                  leading: Icon(Icons.equalizer_outlined),
-                  title: Text("Chat Bot"),
-                ),
-              ),
+              // Card(
+              //   child: ListTile(
+              //     onTap: () {
+              //       Navigator.push(context,
+              //           MaterialPageRoute(builder: (context) => GEMINI()));
+              //     },
+              //     leading: Icon(Icons.equalizer_outlined),
+              //     title: Text("Chat Bot"),
+              //   ),
+              // ),
               Card(
                 child: ListTile(
                   onTap: () async {
@@ -269,20 +273,20 @@ class _HomePageState extends State<HomePage> {
                 .headlineSmall
                 ?.copyWith(fontWeight: FontWeight.bold, color: Colors.white)),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: primary_green,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-        ],
-        currentIndex: pageIndex,
-        onTap: (value) {
-          setState(() {
-            pageIndex = value;
-          });
-        },
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   selectedItemColor: primary_green,
+      //   items: const [
+      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+      //     BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+      //     BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+      //   ],
+      //   currentIndex: pageIndex,
+      //   onTap: (value) {
+      //     setState(() {
+      //       pageIndex = value;
+      //     });
+      //   },
+      // ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
         child: Column(

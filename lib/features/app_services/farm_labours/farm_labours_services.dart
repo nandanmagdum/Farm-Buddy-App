@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:krishi_vikas/local_storage/storage_service.dart';
 import 'package:krishi_vikas/utils/api.dart';
 import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -46,9 +47,12 @@ class FarmLaboursServices {
     print("-------------------------");
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    // String token = prefs.getString("token")!;
-    String token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF0aGFydmMyMDIyQGdtYWlsLmNvbSIsIm5hbWUiOiJBdGhhcnYiLCJfaWQiOiI2NjQ5YjQyNWY2NDhlMzgwOWVkOTYxNDMiLCJhZGRyZXNzIjoiOTQyMjMyNDkwMyIsImlhdCI6MTcxNjg1NTgyNywiZXhwIjoxNzE5NDQ3ODI3fQ.ENL-4Kl38ATfyE5BCx9Y2QRoE_JLxyNh4eebWqG0DAg";
+   String token =
+        StorageService.pref.getString(StorageService.JWT) ?? "null";
+    if(token == "null"){
+      print("No token");
+      throw Exception("Jwt Token not found");
+    }
 
     try {
       Response response = await dio.post("${base_url}labour/",
@@ -85,10 +89,12 @@ class FarmLaboursServices {
   Future<dynamic> getFarmLabourRecord(String id) async {
     print("--- getFarmLabourRecord function is called ---");
     try {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      // String token = prefs.getString("token")!;
-      String token =
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbmRhbm1hZ2R1bTE0QGdtYWlsLmNvbSIsIm5hbWUiOiJOYW5kYW4gTWFnZHVtIiwiX2lkIjoiNjY0NGViOTRjZDhkYzJmMDYwMjMzMDkyIiwiYWRkcmVzcyI6IkEvUDogQmFsaW5nZSwgVGFsOiBLYXJ2ZWVyLCBEaXN0OiBLb2xoYXB1ciwgNDE2MDEwIiwiaWF0IjoxNzE1NzkyODc0LCJleHAiOjE3MTgzODQ4NzR9.zebVbEiS4jM7cF0HryT-qQtUb878G_vA5VUkagdpJO0";
+     String token =
+        StorageService.pref.getString(StorageService.JWT) ?? "null";
+    if(token == "null"){
+      print("No token");
+      throw Exception("Jwt Token not found");
+    }
 
       Response response = await dio.get("${base_url}labour/$id",
           options: Options(headers: {"Authorization": token}));
@@ -104,10 +110,12 @@ class FarmLaboursServices {
   Future<dynamic> getAllFarmLaboursRecords() async {
     print("--- getAllFarmLaboursRecords function is called ---");
 
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    // String token = prefs.getString("token")!;
-    String token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbmRhbm1hZ2R1bTE0QGdtYWlsLmNvbSIsIm5hbWUiOiJOYW5kYW4gTWFnZHVtIiwiX2lkIjoiNjY0NGViOTRjZDhkYzJmMDYwMjMzMDkyIiwiYWRkcmVzcyI6IkEvUDogQmFsaW5nZSwgVGFsOiBLYXJ2ZWVyLCBEaXN0OiBLb2xoYXB1ciwgNDE2MDEwIiwiaWF0IjoxNzE1NzkyODc0LCJleHAiOjE3MTgzODQ4NzR9.zebVbEiS4jM7cF0HryT-qQtUb878G_vA5VUkagdpJO0";
+   String token =
+        StorageService.pref.getString(StorageService.JWT) ?? "null";
+    if(token == "null"){
+      print("No token");
+      throw Exception("Jwt Token not found");
+    }
     try {
       Response response = await dio.get("${base_url}labour/all",
           options: Options(headers: {"Authorization": token}));

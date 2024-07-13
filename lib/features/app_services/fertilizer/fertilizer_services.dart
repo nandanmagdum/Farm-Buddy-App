@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:krishi_vikas/local_storage/storage_service.dart';
 import 'package:krishi_vikas/utils/api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,10 +18,12 @@ class FertilizerServices {
       String specific_users) async {
     print("--- addRecord function is called ---");
 
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    // String token = prefs.getString("token")!;
     String token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbmRhbm1hZ2R1bTE0QGdtYWlsLmNvbSIsIm5hbWUiOiJOYW5kYW4gTWFnZHVtIiwiX2lkIjoiNjY0NGViOTRjZDhkYzJmMDYwMjMzMDkyIiwiYWRkcmVzcyI6IkEvUDogQmFsaW5nZSwgVGFsOiBLYXJ2ZWVyLCBEaXN0OiBLb2xoYXB1ciwgNDE2MDEwIiwiaWF0IjoxNzE1NzkyODc0LCJleHAiOjE3MTgzODQ4NzR9.zebVbEiS4jM7cF0HryT-qQtUb878G_vA5VUkagdpJO0";
+        StorageService.pref.getString(StorageService.JWT) ?? "null";
+    if(token == "null"){
+      print("No token");
+      throw Exception("Jwt Token not found");
+    }
 
     try {
       Response response = await dio.post("${base_url}fertilizer/",
@@ -50,10 +53,12 @@ class FertilizerServices {
   Future<dynamic> getFertilizerRecord(String id) async {
     print("--- getFertilizerRecord function is called ---");
     try {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      // String token = prefs.getString("token")!;
       String token =
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbmRhbm1hZ2R1bTE0QGdtYWlsLmNvbSIsIm5hbWUiOiJOYW5kYW4gTWFnZHVtIiwiX2lkIjoiNjY0NGViOTRjZDhkYzJmMDYwMjMzMDkyIiwiYWRkcmVzcyI6IkEvUDogQmFsaW5nZSwgVGFsOiBLYXJ2ZWVyLCBEaXN0OiBLb2xoYXB1ciwgNDE2MDEwIiwiaWF0IjoxNzE1NzkyODc0LCJleHAiOjE3MTgzODQ4NzR9.zebVbEiS4jM7cF0HryT-qQtUb878G_vA5VUkagdpJO0";
+        StorageService.pref.getString(StorageService.JWT) ?? "null";
+    if(token == "null"){
+      print("No token");
+      throw Exception("Jwt Token not found");
+    }
 
       Response response = await dio.get("${base_url}fertilizer/$id",
           options: Options(headers: {"Authorization": token}));
@@ -69,10 +74,12 @@ class FertilizerServices {
   Future<dynamic> getAllFertilizersRecords() async {
     print("--- getAllFertilizersRecords function is called ---");
 
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    // String token = prefs.getString("token")!;
     String token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbmRhbm1hZ2R1bTE0QGdtYWlsLmNvbSIsIm5hbWUiOiJOYW5kYW4gTWFnZHVtIiwiX2lkIjoiNjY0NGViOTRjZDhkYzJmMDYwMjMzMDkyIiwiYWRkcmVzcyI6IkEvUDogQmFsaW5nZSwgVGFsOiBLYXJ2ZWVyLCBEaXN0OiBLb2xoYXB1ciwgNDE2MDEwIiwiaWF0IjoxNzE1NzkyODc0LCJleHAiOjE3MTgzODQ4NzR9.zebVbEiS4jM7cF0HryT-qQtUb878G_vA5VUkagdpJO0";
+        StorageService.pref.getString(StorageService.JWT) ?? "null";
+    if(token == "null"){
+      print("No token");
+      throw Exception("Jwt Token not found");
+    }
 
     try {
       Response response = await dio.get("${base_url}fertilizer/all",

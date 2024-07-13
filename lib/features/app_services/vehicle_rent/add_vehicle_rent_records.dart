@@ -83,7 +83,7 @@ class _AddVehicleRecordState extends State<AddVehicleRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      // floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
         title: const Text("Add Vehicle record"),
         centerTitle: true,

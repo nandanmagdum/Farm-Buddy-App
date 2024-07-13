@@ -46,9 +46,10 @@ class ViewDetailsState extends State<ViewDetails> {
           child: Column(
             children: [
               SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  child: Image.network(widget.photo_url)),
+                height: MediaQuery.of(context).size.height * 0.5,
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: Image.network(widget.photo_url == "" ? "https://c7.alamy.com/comp/2JA6BFB/no-image-vector-symbol-missing-available-icon-no-gallery-for-this-moment-placeholder-2JA6BFB.jpg" : widget.photo_url),
+              ),
               SizedBox(
                 height: 20,
               ),

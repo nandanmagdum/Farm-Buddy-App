@@ -72,7 +72,7 @@ class _AddSoilAnalysisRecordState extends State<AddSoilAnalysisRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      // floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
         title: const Text("Add Soil Analysis Record"),
         centerTitle: true,

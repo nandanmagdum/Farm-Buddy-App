@@ -71,7 +71,7 @@ class _AddFertilizerRecordState extends State<AddFertilizerRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      // floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
         title: const Text("Add Fertlizer Record"),
         centerTitle: true,

@@ -69,7 +69,7 @@ class _AddAnimalRecordState extends State<AddAnimalRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      // floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
         title: const Text("Animal Husbandry"),
         centerTitle: true,

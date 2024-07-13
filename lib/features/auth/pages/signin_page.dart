@@ -151,8 +151,8 @@ class _SigninPageState extends State<SigninPage> {
                           contentPadding:
                               const EdgeInsets.symmetric(vertical: 10)),
                     );
-                  }),
-
+                    }
+                  ),
                   const SizedBox(height: 20),
                   // button
                   MyFilledButton(
@@ -171,7 +171,8 @@ class _SigninPageState extends State<SigninPage> {
                           child: const Text(
                             "Register now",
                             style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
+                          ),
+                        ),
                     ],
                   )
                 ],

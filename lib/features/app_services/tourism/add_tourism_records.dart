@@ -74,7 +74,7 @@ class _AddTourismRecordState extends State<AddTourismRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      // floatingActionButton: FloatingActionButton(onPressed: () {}),
       appBar: AppBar(
         title: const Text("Add Tourism record"),
         centerTitle: true,

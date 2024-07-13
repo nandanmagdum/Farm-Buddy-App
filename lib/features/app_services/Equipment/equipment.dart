@@ -12,20 +12,20 @@ class Equipment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () async {
-            SharedPreferences prefs = await SharedPreferences.getInstance();
-            String token = prefs.getString("token")!;
-            print(token);
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () async {
+        //     SharedPreferences prefs = await SharedPreferences.getInstance();
+        //     String token = prefs.getString("token")!;
+        //     print(token);
 
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => AddEquipmentRecord(),
-                ));
-          },
-          child: const Icon(Icons.add),
-        ),
+        //     Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) => AddEquipmentRecord(),
+        //         ));
+        //   },
+        //   child: const Icon(Icons.add),
+        // ),
         appBar: AppBar(
           title: const Text("Equipment"),
         ),

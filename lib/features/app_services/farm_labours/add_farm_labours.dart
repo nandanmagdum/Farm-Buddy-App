@@ -77,10 +77,10 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        print("asdasdasdad");
-        // print("${username.text}");
-      }),
+      // floatingActionButton: FloatingActionButton(onPressed: () {
+      //   print("asdasdasdad");
+      //   // print("${username.text}");
+      // }),
       appBar: AppBar(
         title: const Text("Add Farm Labours Records"),
         centerTitle: true,
@@ -201,8 +201,14 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
               MyFilledButton(
                 text: "Add Record",
                 onTap: () async {
+                  try {
+                    print("Api called");
                   // upload image on firebase and store the url
                   String url = await uploadFile();
+                  if(url == "error"){
+                    throw Exception("Error while uploading image to firebase");
+                  }
+                  print("########################################################################");
                   print("***** $url");
 
                   bool status = await FarmLaboursServices().addRecord(
@@ -223,11 +229,20 @@ class _AddFarmLaoursRecordsState extends State<AddFarmLaoursRecords> {
                     service_area.text.trim(),
                   );
                   if (status) {
+                    print(status);
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         backgroundColor: Colors.green,
                         behavior: SnackBarBehavior.floating,
                         content: Text("Record add successfully")));
                     Navigator.pop(context);
+                  }
+                  } catch (e) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        backgroundColor: Colors.green,
+                        behavior: SnackBarBehavior.floating,
+                        content: Text(e.toString()),
+                        ),
+                      ); 
                   }
                 },
               ),
